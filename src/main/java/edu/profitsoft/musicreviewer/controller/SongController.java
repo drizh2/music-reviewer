@@ -2,6 +2,7 @@ package edu.profitsoft.musicreviewer.controller;
 
 import edu.profitsoft.musicreviewer.dao.SongDAO;
 import edu.profitsoft.musicreviewer.dto.SongDetailsDTO;
+import edu.profitsoft.musicreviewer.dto.SongInfoDTO;
 import edu.profitsoft.musicreviewer.exception.EmptyFileException;
 import edu.profitsoft.musicreviewer.exception.WrongFileExtension;
 import edu.profitsoft.musicreviewer.mapper.SongMapper;
@@ -26,6 +27,8 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/songs")
@@ -93,8 +96,12 @@ public class SongController {
         Pageable pageable = PageRequest.of(request.getPage() - 1, request.getSize());
         Page<Song> songPage = songService.getSongsPage(request, pageable);
 
+        List<SongInfoDTO> songInfoDTOList = songPage.stream()
+                .map(SongMapper::songToSongInfoDTO)
+                .toList();
+
         SongListResponse response = SongListResponse.builder()
-                .list(songPage.getContent())
+                .list(songInfoDTOList)
                 .totalPages(songPage.getTotalPages())
                 .build();
 

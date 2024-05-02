@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  postgresql:
+    image: "postgres:15.4-alpine"
+    container_name: spring.postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 5433:5432
+    networks:
+      - postgres
+    volumes:
+      - 'spring_postgres:/var/lib/postgresql/data/'
+volumes:
+  spring_postgres:
+networks:
+  postgres:
+    driver: bridge

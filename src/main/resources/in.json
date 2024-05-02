@@ -1,0 +1,384 @@
+[
+  {
+    "title" : "Don't Stay",
+    "album" : "Meteora",
+    "year" : 2003,
+    "genres" : "Alternative Rock. Nu-Metal.",
+    "artistId" : 1
+  },
+  {
+    "title" : "Numb",
+    "album" : "Meteora",
+    "year" : 2003,
+    "genres" : "Alternative Rock. Nu-Metal.",
+    "artistId" : 1
+  },
+  {
+    "title" : "In the End",
+    "album" : "Hybrid Theory",
+    "year" : 2000,
+    "genres" : "Alternative Rock. Nu-Metal.",
+    "artistId" : 1
+  },
+  {
+    "title" : "One Step Closer",
+    "album" : "Hybrid Theory",
+    "year" : 2000,
+    "genres" : "Alternative Rock. Nu-Metal.",
+    "artistId" : 1
+  },
+  {
+    "title" : "ROADS UNTRAVELED",
+    "album" : "LIVING THINGS",
+    "year" : 2000,
+    "genres" : "Alternative Rock. Nu-Metal.",
+    "artistId" : 1
+  },
+  {
+    "title" : "Some wrong song with no album",
+    "year" : 2000,
+    "genres" : "Some wrong genres with no album",
+    "artistId" : 1
+  },
+  {
+    "title" : "Friend, please",
+    "album" : "Twenty One Pilots",
+    "year" : 2009,
+    "genres" : "Dark-cabaret",
+    "artistId" : 2
+  },
+  {
+    "title" : "Ode to Sleep",
+    "album" : "Vessel",
+    "year" : 2013,
+    "genres" : "Alternative hip-hop. Rap-rock.",
+    "artistId" : 2
+  },
+  {
+    "title" : "Fairly Local",
+    "album" : "Blurryface",
+    "year" : 2015,
+    "genres" : "Rock. Alternative rock.",
+    "artistId" : 2
+  },
+  {
+    "title" : "The Hype",
+    "album" : "Trench",
+    "year" : 2018,
+    "genres" : "Hip-hop. Alternative rock.",
+    "artistId" : 2
+  },
+  {
+    "title" : "Redecorate",
+    "album" : "Scaled And Icy",
+    "year" : 2021,
+    "genres" : "Hip-hop. Alternative rock.",
+    "artistId" : 2
+  },
+  {
+    "title" : "Some wrong year song",
+    "album" : "Some wrong year song",
+    "year" : 1700,
+    "genres" : "Some wrong year song",
+    "artistId" : 2
+  },
+  {
+    "title" : "Gasoline",
+    "album" : "TRAUMA",
+    "year" : 2019,
+    "genres" : "Melodic metalcore. Pop-metal",
+    "artistId" : 3
+  },
+  {
+    "title" : "Hurricane",
+    "album" : "TRAUMA",
+    "year" : 2019,
+    "genres" : "Melodic metalcore. Pop-metal",
+    "artistId" : 3
+  },
+  {
+    "title" : "Bad Things",
+    "album" : "TRUE POWER",
+    "year" : 2022,
+    "genres" : "Metalcore. Nu-metal.",
+    "artistId" : 3
+  },
+  {
+    "title" : "Scars",
+    "album" : "Lifelines",
+    "year" : 2016,
+    "genres" : "Metalcore. Post-hardcore.",
+    "artistId" : 3
+  },
+  {
+    "title" : "There’s Fear In Letting Go",
+    "album" : "TRUE POWER",
+    "year" : 2022,
+    "genres" : "Metalcore. Nu-metal.",
+    "artistId" : 3
+  },
+  {
+    "title" : "Song without artist",
+    "album" : "Song without artist",
+    "year" : 2022,
+    "genres" : "Song without artist"
+  },
+  {
+    "title" : "THE DEATH OF PIECE OF MIND",
+    "album" : "THE DEATH OF PIECE OF MIND",
+    "year" : 2022,
+    "genres" : "Metalcore. Alternative rock.",
+    "artistId" : 4
+  },
+  {
+    "title" : "Like A Villain",
+    "album" : "THE DEATH OF PIECE OF MIND",
+    "year" : 2022,
+    "genres" : "Metalcore. Alternative rock.",
+    "artistId" : 4
+  },
+  {
+    "title" : "Just Pretend",
+    "album" : "THE DEATH OF PIECE OF MIND",
+    "year" : 2022,
+    "genres" : "Metalcore. Alternative rock.",
+    "artistId" : 4
+  },
+  {
+    "title" : "The Worst in Me",
+    "album" : "Bad Omens",
+    "year" : 2016,
+    "genres" : "Metalcore.",
+    "artistId" : 4
+  },
+  {
+    "title" : "Limits",
+    "album" : "Finding God Before God Finds Me(Extended)",
+    "year" : 2020,
+    "genres" : "Metalcore.",
+    "artistId" : 4
+  },
+  {
+    "title" : "Back in Black",
+    "album" : "Back in Black",
+    "year" : 1980,
+    "genres" : "Hard-rock. Heavy-metal",
+    "artistId" : 5
+  },
+  {
+    "title" : "You Shook Me All Night Long",
+    "album" : "Back in Black",
+    "year" : 1980,
+    "genres" : "Hard-rock. Heavy-metal",
+    "artistId" : 5
+  },
+  {
+    "title" : "Thunderstruck",
+    "album" : "The Razors Edge",
+    "year" : 1990,
+    "genres" : "Hard-rock. Heavy-metal",
+    "artistId" : 5
+  },
+  {
+    "title" : "Highway to Hell",
+    "album" : "Highway to Hell",
+    "year" : 1979,
+    "genres" : "Hard-rock.",
+    "artistId" : 5
+  },
+  {
+    "title" : "T.N.T.",
+    "album" : "High Voltage",
+    "year" : 1976,
+    "genres" : "Hard-rock.",
+    "artistId" : 5
+  },
+  {
+    "title" : "Wasted Years",
+    "album" : "Somewhere in Time",
+    "year" : 1986,
+    "genres" : "Heavy-metal.",
+    "artistId" : 6
+  },
+  {
+    "title" : "Hallowed Be Thy Name",
+    "album" : "The Number of the Beast",
+    "year" : 1982,
+    "genres" : "Heavy-metal.",
+    "artistId" : 6
+  },
+  {
+    "title" : "Fear of the Dark",
+    "album" : "Fear of the Dark",
+    "year" : 1992,
+    "genres" : "Heavy-metal.",
+    "artistId" : 6
+  },
+  {
+    "title" : "The Trooper",
+    "album" : "Piece of Mind",
+    "year" : 1983,
+    "genres" : "Heavy-metal.",
+    "artistId" : 6
+  },
+  {
+    "title" : "2 Minutes to Midnight",
+    "album" : "Powerslave",
+    "year" : 1984,
+    "genres" : "Heavy-metal.",
+    "artistId" : 6
+  },
+  {
+    "title" : "N.I.B.",
+    "album" : "Black Sabbath",
+    "year" : 1970,
+    "genres" : "Heavy-metal.",
+    "artistId" : 7
+  },
+  {
+    "title" : "Paranoid",
+    "album" : "Paranoid",
+    "year" : 1970,
+    "genres" : "Heavy-metal.",
+    "artistId" : 7
+  },
+  {
+    "title" : "War Pigs",
+    "album" : "Paranoid",
+    "year" : 1970,
+    "genres" : "Heavy-metal.",
+    "artistId" : 7
+  },
+  {
+    "title" : "Iron Man",
+    "album" : "Paranoid",
+    "year" : 1970,
+    "genres" : "Heavy-metal.",
+    "artistId" : 7
+  },
+  {
+    "title" : "Never Say Die!",
+    "album" : "Never Say Die!",
+    "year" : 1978,
+    "genres" : "Heavy-metal. Hard-rock.",
+    "artistId" : 7
+  },
+  {
+    "title" : "I'm In Love With My Car",
+    "album" : "A Night At The Opera",
+    "year" : 1975,
+    "genres" : "Rock. Opera.",
+    "artistId" : 8
+  },
+  {
+    "title" : "Another One Bites The Dust",
+    "album" : "The Game",
+    "year" : 1980,
+    "genres" : "Rock. Rock-n-Roll.",
+    "artistId" : 8
+  },
+  {
+    "title" : "We Will Rock You",
+    "album" : "News of the World",
+    "year" : 1977,
+    "genres" : "Hard-rock. Progressive rock.",
+    "artistId" : 8
+  },
+  {
+    "title" : "Bohemian Rhapsody",
+    "album" : "A Night At The Opera",
+    "year" : 1975,
+    "genres" : "Rock. Opera.",
+    "artistId" : 8
+  },
+  {
+    "title" : "Don't Stop Me Now",
+    "album" : "Jazz",
+    "year" : 1978,
+    "genres" : "Rock. Pop.",
+    "artistId" : 8
+  },
+  {
+    "title" : "Song without field",
+    "album" : "Song without field",
+    "genres" : "Song without field.",
+    "artistId" : 8
+  },
+  {
+    "title" : "Nothing Else Matters",
+    "album" : "Metallica",
+    "year" : 1991,
+    "genres" : "Heavy-metal",
+    "artistId" : 9
+  },
+  {
+    "title" : "Enter Sandman",
+    "album" : "Metallica",
+    "year" : 1991,
+    "genres" : "Heavy-metal",
+    "artistId" : 9
+  },
+  {
+    "title" : "The Unforgiven",
+    "album" : "Metallica",
+    "year" : 1991,
+    "genres" : "Heavy-metal",
+    "artistId" : 9
+  },
+  {
+    "title" : "One",
+    "album" : "...And Justice For All",
+    "year" : 1991,
+    "genres" : "Heavy-metal",
+    "artistId" : 9
+  },
+  {
+    "title" : "Ride The Lightning",
+    "album" : "Ride The Lightning",
+    "year" : 1984,
+    "genres" : "Thrash-metal",
+    "artistId" : 9
+  },
+  {
+    "title" : "Wait and Bleed",
+    "album" : "Slipknot",
+    "year" : 1999,
+    "genres" : "Nu-metal.",
+    "artistId" : 10
+  },
+  {
+    "title" : "The Devil in I",
+    "album" : ".5: The Gray Chapter",
+    "year" : 2014,
+    "genres" : "Nu-metal. Heavy-metal.",
+    "artistId" : 10
+  },
+  {
+    "title" : "Snuff",
+    "album" : "All Hope Is Gone",
+    "year" : 2008,
+    "genres" : "Heavy-metal. Alternative metal",
+    "artistId" : 10
+  },
+  {
+    "title" : "Psychosocial",
+    "album" : "All Hope Is Gone",
+    "year" : 2008,
+    "genres" : "Heavy-metal. Alternative metal",
+    "artistId" : 10
+  },
+  {
+    "title" : "Custer",
+    "album" : ".5: The Gray Chapter",
+    "year" : 2014,
+    "genres" : "Nu-metal. Heavy-metal.",
+    "artistId" : 10
+  },
+  {
+    "title" : "Duality",
+    "album" : "Vol. 3: The Subliminal Verses",
+    "year" : 2004,
+    "genres" : "Nu-metal. Alternative metal.",
+    "artistId" : 10
+  }
+]

@@ -1,0 +1,21 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="create-indexes-for-song" author="user">
+        <createIndex indexName="idx_song_title" tableName="song">
+            <column name="title"/>
+        </createIndex>
+
+        <createIndex indexName="idx_song_album" tableName="song">
+            <column name="album"/>
+        </createIndex>
+
+        <createIndex indexName="idx_song_year" tableName="song">
+            <column name="year"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

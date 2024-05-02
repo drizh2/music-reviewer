@@ -1,0 +1,59 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="insert-into-artist" author="user">
+        <insert tableName="artist">
+            <column name="full_name" value="Linkin Park"/>
+            <column name="bio" value="Alternative rock band from California"/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="Twenty One Pilots"/>
+            <column name="bio" value="Pop-rock duet from Ohio "/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="I Prevail"/>
+            <column name="bio" value="American rock and metal band."/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="Bad Omens"/>
+            <column name="bio" value="Metalcore band from Virginia."/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="AC/DC"/>
+            <column name="bio" value="Australian rock band from 1973."/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="Iron Maiden"/>
+            <column name="bio" value="One of the most popular britain rock band from 1975."/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="Black Sabbath"/>
+            <column name="bio" value="Heavy-metal band from England. One of the founders of heavy-metal."/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="Queen"/>
+            <column name="bio" value="Legendary britain rock band from 1971."/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="Metallica"/>
+            <column name="bio" value="Iconic american thrash- and heavy-metal band."/>
+        </insert>
+
+        <insert tableName="artist">
+            <column name="full_name" value="Slipknot"/>
+            <column name="bio" value="American nu-metal band from 1995."/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

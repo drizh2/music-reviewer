@@ -33,6 +33,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/songs")
 @RequiredArgsConstructor
+@CrossOrigin
 public class SongController {
 
     private final SongService songService;

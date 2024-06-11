@@ -1,8 +1,7 @@
 version: '3.1'
 services:
-  postgresql:
+  db:
     image: "postgres:15.4-alpine"
-    container_name: spring.postgres
     restart: unless-stopped
     environment:
       - POSTGRES_DB=postgres
@@ -14,6 +13,21 @@ services:
       - postgres
     volumes:
       - 'spring_postgres:/var/lib/postgresql/data/'
+
+  musicreviewer:
+    build: .
+    depends_on:
+      - db
+    restart: on-failure
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
+    networks:
+      - postgres
+
 volumes:
   spring_postgres:
 networks:

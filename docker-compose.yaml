@@ -1,0 +1,118 @@
+version: '3.1'
+services:
+  zookeeper:
+    image: 'confluentinc/cp-zookeeper:latest'
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - reviewer
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: 'confluentinc/cp-kafka:latest'
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - 9092:9092
+    networks:
+      - reviewer
+
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    environment: [ 'ES_JAVA_OPTS=-Xms1G -Xmx2G','bootstrap.memory_lock=true','discovery.type=single-node','xpack.security.enabled=false', 'xpack.security.enrollment.enabled=false' ]
+    ports:
+      - 9200:9200
+    networks:
+      - reviewer
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+        reservations:
+          cpus: '1.0'
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.7.1
+    container_name: kibana
+    environment:
+      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: d1a66dfd-c4d3-4a0a-8290-2abcb83ab3aa
+    ports:
+      - 5601:5601
+    networks:
+      - reviewer
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+        reservations:
+          cpus: '1.0'
+
+  db:
+    image: "postgres:15.4-alpine"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 5433:5432
+    networks:
+      - reviewer
+    volumes:
+      - 'spring_postgres:/var/lib/postgresql/data/'
+
+  mailsender:
+    build: MailSender/.
+    restart: on-failure
+    depends_on:
+      - kafka
+      - elasticsearch
+    ports:
+      - "8080:8080"
+    env_file: MailSender/mail.env
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      #      ELASTICSEARCH_ADDRESS: elasticsearch:9200
+      SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES: elasticsearch:9200
+      SPRING_DATA_ELASTICSEARCH_CLUSTER_NAME: elasticsearch
+      SPRING_DATA_ELASTICSEARCH_REPOSITORIES_ENABLED: true
+      SPRING_ELASTICSEARCH_URIS: http://elasticsearch:9200
+    networks:
+      - reviewer
+
+  musicreviewer:
+    build: SongManager/.
+    depends_on:
+      - db
+    restart: on-failure
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+    networks:
+      - reviewer
+
+volumes:
+  spring_postgres:
+networks:
+  reviewer:
+    driver: bridge

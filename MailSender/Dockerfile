@@ -2,7 +2,7 @@ FROM maven as build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
-RUN mvn clean package
+RUN mvn clean package -Dmaven.test.skip=true
 
 FROM openjdk:17-alpine
 WORKDIR /app

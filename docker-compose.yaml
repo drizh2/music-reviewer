@@ -77,6 +77,15 @@ services:
     volumes:
       - 'spring_postgres:/var/lib/postgresql/data/'
 
+  consul:
+    image: bitnami/consul
+    container_name: "consul"
+    ports:
+      - "8500:8500"
+    command: "consul agent -dev -ui -client=0.0.0.0"
+    networks:
+      - reviewer
+
   mailsender:
     build: MailSender/.
     restart: on-failure
@@ -89,6 +98,8 @@ services:
     environment:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       #      ELASTICSEARCH_ADDRESS: elasticsearch:9200
+      SPRING_CLOUD_CONSUL_HOST: consul
+      SPRING_CLOUD_CONSUL_PORT: 8500
       SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES: elasticsearch:9200
       SPRING_DATA_ELASTICSEARCH_CLUSTER_NAME: elasticsearch
       SPRING_DATA_ELASTICSEARCH_REPOSITORIES_ENABLED: true
@@ -108,6 +119,42 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: password
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_CLOUD_CONSUL_HOST: consul
+      SPRING_CLOUD_CONSUL_PORT: 8500
+      SPRING_CONFIG_IMPORT: optional:consul:/
+      SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME: service-songmanager
+      SPRING_CLOUD_CONSUL_DISCOVERY_HEALTH_CHECK_PATH: /health
+    networks:
+      - reviewer
+
+  gateway:
+    build: gateway/.
+    depends_on:
+      - db
+      - consul
+    restart: on-failure
+    ports:
+      - "2002:2002"
+    environment:
+      SPRING_CLOUD_CONSUL_HOST: consul
+      SPRING_CLOUD_CONSUL_PORT: 8500
+      SPRING_R2DBC_URL: r2dbc:postgresql://db:5432/postgres
+      SPRING_R2DBC_USERNAME: root
+      SPRING_R2DBC_PASSWORD: password
+    networks:
+      - reviewer
+
+  frontend:
+    build: music-reviewer-react/.
+    depends_on:
+      - musicreviewer
+      - mailsender
+    restart: on-failure
+    ports:
+      - "3000:3000"
+#    volumes:
+#      - ./app
+#      - /app/node_modules
     networks:
       - reviewer
 

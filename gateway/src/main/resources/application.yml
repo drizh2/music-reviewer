@@ -1,0 +1,59 @@
+server:
+  port: 2002
+  error:
+    include-message: always
+    include-binding-errors: always
+
+oauth:
+  google:
+    clientId: "141151826823-kqe9pbaf4eenvftetq96d24rp92e7f4b.apps.googleusercontent.com"
+    clientSecret: "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"
+    scope: "openid profile email"
+
+spring:
+  application:
+    name: gateway
+  config:
+    import: optional:consul:/
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        health-check-path: /health
+    gateway:
+      routes:
+        - id: gateway-oauth-route
+          uri: lb://gateway
+          predicates:
+            - Path=/oauth/**
+        - id: song-manager
+          uri: lb://SongManager
+          predicates:
+            - Path=/api/**
+  r2dbc:
+    url: "r2dbc:postgresql://localhost:5433/postgres"
+    username: root
+    password: password
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      services:
+        wait-duration-in-open-state: 10s
+        failure-rate-threshold: 60
+        slow-call-duration-threshold:
+          - 2s
+        minimum-number-of-calls: 3
+        permitted-number-of-calls-in-half-open-state: 1
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: "*"

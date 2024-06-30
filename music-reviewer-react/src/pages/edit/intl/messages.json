@@ -1,0 +1,14 @@
+{
+  "title" : "Change entity",
+  "titleInput" : "Title",
+  "yearInput" : "Year",
+  "albumInput" : "Album",
+  "genresInput" : "Genres",
+  "artistInput" : "Artist",
+  "save" : "Save",
+  "cancel" : "Cancel",
+  "create" : "Create",
+  "back" : "Back",
+  "wrongYear" : "Year should be from 1900 to 2024!",
+  "successEdit" : "Entity has been successfully updated!"
+}
